@@ -52,15 +52,16 @@
             font-size:14px; font-weight:700; cursor:pointer; letter-spacing:.5px; }
   .intl .card { display:flex; flex-direction:column; align-items:center; }
   .intl .vidwrap { position:relative; background:#000; line-height:0; }
-  .intl .vidwrap video { display:block; max-width:94vw; max-height:74vh; width:auto; height:auto; background:#000; }
+  .intl .vidwrap video { display:block; max-width:min(406px, calc(100vw - 24px)); max-height:74vh; width:auto; height:auto; background:#000; }
   .intl .vidctrl { position:absolute; top:6px; right:6px; display:flex; flex-direction:row; gap:8px; z-index:4; }
   .intl .vidctrl button { width:34px; height:34px; border-radius:50%; background:rgba(0,0,0,.5); color:#fff;
             border:none; font-size:15px; cursor:pointer; line-height:1; }
 
   /* CTA = Rectangle1.png (button) + LearnMore.png (label) stacked */
-  .cta { position:relative; display:block; width:min(300px,78vw); margin:16px auto 0; line-height:0; cursor:pointer; }
-  .cta img { display:block; width:100%; height:auto; }
-  .cta .cta-fg { position:absolute; top:0; left:0; }
+  .cta { position:relative; display:block; width:min(280px, calc(100vw - 32px)); margin:16px auto 0; line-height:0; cursor:pointer; }
+  .cta .cta-bg { display:block; width:100%; height:auto; }
+  /* label sits centered on the button; tweak the 74% if it reads too big/small */
+  .cta .cta-fg { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:74%; height:auto; }
 </style>
 </head>
 <body>
