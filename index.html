@@ -177,13 +177,14 @@
   function setSpk(){ sndBtn.innerHTML = vid.muted ? MUTE : SOUND; sndBtn.title = vid.muted ? 'Sound on' : 'Mute'; }
   function expand(){
     if(expanded) return; expanded=true; stopCarousel();
+    anchor.style.visibility='hidden';
     intl.classList.add('open');
     vid.muted=true; setSpk(); try{ vid.currentTime=0; }catch(e){}
     var p=vid.play(); if(p&&p.catch){ p.catch(function(){}); }
   }
   function closeInterstitial(resume){
     expanded=false; intl.classList.remove('open'); try{ vid.pause(); }catch(e){}
-    if(resume) startCarousel();
+    if(resume){ anchor.style.visibility='visible'; startCarousel(); }
   }
   function dismiss(){ stopCarousel(); closeInterstitial(false); anchor.style.display='none'; }
 
